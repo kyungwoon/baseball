@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class Main {
 	/*
-	 * 메소드 리스트 
-	 * 1. 1부터 9까지 중복없는 3개의 랜덤 숫자 생성 기능 : makeRandNum 
-	 * 2. 스트라이크, 볼 판별 하는 기능 : isStrike,isBall
-	 * 3. 스트라이크, 볼 갯수에 맞는 세부 힌트 : Hint
-	 * 4. 유저가 입력한 수에 따라 볼과 스트라이크를 판단하고 힌트 반환 : compare
+	 * 메소드 리스트 1. 1부터 9까지 중복없는 3개의 랜덤 숫자 생성 기능 : makeRandNum 
+	 * 2. 스트라이크, 볼 판별 하는 기능 : isStrike,isBall 
+	 * 3. 스트라이크, 볼 갯수에 맞는 세부 힌트 : Hint 
+	 * 4. 유저가 입력한 수에 따라 볼과 스트라이크를 판단하고 힌트 반환 : compare 
+	 * 5. 게임 플레이 구현 : playGame
 	 * 
 	 */
+	
 	private static String randNum = "";
 	private static String userNum = "";
 
@@ -92,9 +93,21 @@ public class Main {
 		return Hint(ballNum, strikeNum);
 	}
 
+	// 게임 플레이
+	public void playGame() {
+		String result = "";
+
+		do {
+			System.out.print("숫자를 입력해 주세요 : ");
+			result = compare();
+			System.out.println(result);
+		} while (!result.equals("3개의 숫자를 모두 맞히셨습니다! 게임 종료"));
+	}
+
 	public static void main(String[] args) {
-		// makeRandNum(중복 숫자) 테스트
-		System.out.println(makeRandNum());
+		Main start = new Main();
+		start.comRand();
+		start.playGame();
 
 	}
 
