@@ -4,6 +4,7 @@ public class Main {
 	/*
 	 * 메소드 리스트 
 	 * 1. 1부터 9까지 중복없는 3개의 랜덤 숫자 생성 기능 : makeRandNum
+	 * 2. 스트라이크, 볼 판별 하는 기능 : isStrike,isBall
 	 * 
 	 */
 	private static String randNum = "";
