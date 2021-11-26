@@ -11,7 +11,6 @@ public class Main {
 	 * 5. 게임 플레이 구현 : playGame
 	 * 
 	 */
-	
 	private static String randNum = "";
 	private static String userNum = "";
 
@@ -36,7 +35,7 @@ public class Main {
 		return str_randNum;
 	}
 
-	public void comRand() {
+	public static void comRand() {
 		randNum = makeRandNum();
 	}
 
@@ -61,7 +60,7 @@ public class Main {
 	}
 
 	// 스트라이크,볼 수의 힌트
-	private String Hint(int strikeNum, int ballNum) {
+	private static String Hint(int strikeNum, int ballNum) {
 		if (strikeNum == 3) {
 			return "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
 		} else if (ballNum == 0 && strikeNum == 0) {
@@ -75,7 +74,7 @@ public class Main {
 	}
 
 	// 유저가 입력한 수에 따라 볼과 스트라이크를 판단하고 힌트 반환
-	private String compare() {
+	private static String compare() {
 		int ballNum = 0;
 		int strikeNum = 0;
 		Scanner sc = new Scanner(System.in);
@@ -94,7 +93,7 @@ public class Main {
 	}
 
 	// 게임 플레이
-	public void playGame() {
+	public static void playGame() {
 		String result = "";
 
 		do {
@@ -105,9 +104,8 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		Main start = new Main();
-		start.comRand();
-		start.playGame();
+		Main.comRand();
+		Main.playGame();
 
 	}
 
